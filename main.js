@@ -69,11 +69,11 @@ Assign screen.width to variable width
 width = screen.width;
 
 
-screen.width = -70;
+screen.width -= 70;
 
 new_width = screen.width;
 
-screen.height = -300;
+screen.height -= 300;
 new_height = screen.height;
 /*
 Decrease 70 from screen.width
