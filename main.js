@@ -29,7 +29,8 @@ var last_position_of_x, last_position_of_y;
         ctx.beginPath();
         ctx.strokeStyle = color;
         ctx.lineWidth = width_of_line;
-        
+        ctx.moveTo(last_position_of_x, last_position_of_y);
+        ctx.lineTo(current_position_of_mouse_x, current_position_of_mouse_y);
         /*
         Add the function moveTo() with coordinates
         last_position_of_x, last_position_of_y
@@ -45,21 +46,6 @@ var last_position_of_x, last_position_of_y;
 
         last_position_of_x = current_position_of_mouse_x; 
         last_position_of_y = current_position_of_mouse_y;
-
-    }
-    canvas.addEventListener("moveTo", my_moveTo);
-    function my_moveTo(e){
-
-        last_position_of_x = current_position_of_mouse_x; 
-        last_position_of_y = current_position_of_mouse_y;
-
-    }
-
-    canvas.addEventListener("lineTo", my_lineTo);
-    function my_lineTo(e){
-
-        current_position_of_mouse_x = e.clientX - canvas.offsetLeft;
-        current_position_of_mouse_y = e.clientY - canvas.offsetTop;
 
     }
 
