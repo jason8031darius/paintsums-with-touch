@@ -122,6 +122,8 @@ function my_touchmove(e)
         current_position_of_mouse_x, current_position_of_mouse_y
         to end creation of line    
     */
+    ctx.moveTo(last_position_of_x, last_position_of_y);
+    ctx.lineTo(current_position_of_mouse_x, current_position_of_mouse_y);
     ctx.stroke();
 
     last_position_of_touch_x = current_position_of_touch_x; 
