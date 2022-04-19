@@ -7,9 +7,9 @@ var last_position_of_x, last_position_of_y;
     color = "black";
     width_of_line = 5;
 
-    canvas.addEventListener("mousedown", my_mousedown);
+    canvas.addEventListener("touchstart", my_touchstart);
     
-    function my_mousedown(e)
+    function my_touchstart(e)
     {
         //Addictonal Activity start
         color = document.getElementById("color").value;
@@ -67,14 +67,8 @@ var last_position_of_touch_x, last_position_of_touch_y;
 Assign screen.width to variable width
 */
 width = screen.width;
-
-
-screen.width -= 70;
-
-new_width = screen.width;
-
-screen.height -= 300;
-new_height = screen.height;
+new_width = screen.width - 70;
+new_height = screen.height - 300;
 /*
 Decrease 70 from screen.width
 and assign it to new_width
@@ -91,7 +85,6 @@ if(width < 992)
 }
 
 canvas.addEventListener("touchstart", my_touchstart);
-
 function my_touchstart(e) 
 {
     console.log("my_touchstart");
@@ -122,12 +115,14 @@ function my_touchmove(e)
         current_position_of_mouse_x, current_position_of_mouse_y
         to end creation of line    
     */
-    ctx.moveTo(last_position_of_x, last_position_of_y);
-    ctx.lineTo(current_position_of_mouse_x, current_position_of_mouse_y);
+    ctx.moveTo(last_position_of_touch_x, last_position_of_touch_y);
+    ctx.lineTo(current_position_of_touch_x, current_position_of_touch_y);
     ctx.stroke();
 
     last_position_of_touch_x = current_position_of_touch_x; 
     last_position_of_touch_y = current_position_of_touch_y;
+
+    
    
 }
 
